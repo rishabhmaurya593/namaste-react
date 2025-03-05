@@ -2,19 +2,36 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 
-// JSX => HTML like or XML like syntax.
-// JSX => Babel transpiles it to React.createElement => React Element-JS object => HTML Element
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-
-// we need to wrap in parenthesis our JSX if we want to write in multiple lines.
-const jsxHeading = (
-<h1 id="heading" className='head'>
+// React Element
+const heading = (
+  <h1 id="heading" className='head'>
   Namaste React!
   </h1>
 )
 
-console.log(jsxHeading)
-root.render(jsxHeading)
+// React Component 
+// Class Based Component
+// React Functional Component- just javascript function
+
+const Title = () => (
+  <h1 className='head' tabIndex="5">
+    Namaste React using JSX
+  </h1>
+)
+
+// Component Composition - using a component inside a component known as Component Composition
+const HeadingComponent = () => {
+  return (
+    <div id='container'>
+      <h1 className='header'>Namaste React functional component</h1>
+      <Title />
+    </div>
+  )
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// this is the way to render a component
+root.render(<HeadingComponent />)
 
