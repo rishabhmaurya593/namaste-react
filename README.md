@@ -43,3 +43,10 @@
 -> export default <component name>    => import <coponent name> from "pathname"
 -> export {component name}            => import {component name} from "pathname"
 
+# React Hooks
+-> Normal javascript utility functions
+-> Hooks
+    -> useState() - superpowerful state variables in react
+    -> useEffect()
+
+
