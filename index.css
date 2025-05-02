@@ -81,3 +81,10 @@
     display: flex;
     gap: 20px;
 }
+
+.user-card {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 300px;
+}

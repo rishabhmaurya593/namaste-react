@@ -1,12 +1,14 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   // state variable
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
   const [searchText, setSearchText] = useState("");
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
     fetchData();
@@ -36,6 +38,12 @@ const Body = () => {
     );
     setFilteredRestaurants(filterList);
   };
+
+  if (!onlineStatus) {
+    return <h1>Seems, your internet is not working!</h1>
+  }
+
+
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
