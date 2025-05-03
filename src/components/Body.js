@@ -49,20 +49,21 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div>
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search px-10">
           <input
+          className="border border-solid border-black"
             type="text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button onClick={handleSearch}>Search</button>
+          <button onClick={handleSearch} className="px-4 py-1 bg-green-100 m-4 rounded-md">Search</button>
         </div>
-        <button onClick={handleClick} className="filter-btn">
+        <button onClick={handleClick} className="px-4 py-1 bg-green-100 m-4 rounded-md">
           Filter Top Restaurants
         </button>
       </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap justify-center">
         {/* Restaureant Card */}
         {filteredRestaurants?.map(
           (restaurant) =>
